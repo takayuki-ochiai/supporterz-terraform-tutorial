@@ -5,17 +5,6 @@ variable "instance_type" {
   default = "t3.micro"
 }
 
-
-resource "aws_eip" "ec2_instance" {
-  vpc = true
-  instance = aws_instance.example.id
-
-  tags = {
-    Name      = "${var.server_name}-eip"
-    ManagedBy = "Terraform"
-  }
-}
-
 data "aws_ami" "recent_amazon_linux_2" {
   most_recent = true
   owners      = ["amazon"]
