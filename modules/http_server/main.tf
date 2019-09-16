@@ -36,7 +36,7 @@ resource "aws_instance" "example" {
 EOF
 
   tags = {
-    Name      = "${var.server_name}"
+    Name      = var.server_name
     ManagedBy = "Terraform"
   }
 }
